@@ -84,10 +84,10 @@ std::set<string> Busca::Busca_Nos_Arquivos(string palavra)
 	return arquivosCorretos;
 }
 
-bool Busca::Varre_Arquivo(string path, string palavraProcurada)
+bool Busca::Varre_Arquivo(string caminho, string palavraProcurada)
 {
 	string palavraArquivo;
-	std::ifstream arquivo(path);
+	std::ifstream arquivo(caminho);
 	if (arquivo.is_open()) {
 		while (!arquivo.eof()) {
 			std::getline(arquivo, palavraArquivo, ' ');

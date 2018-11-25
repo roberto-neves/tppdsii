@@ -26,6 +26,6 @@ private:
 	void Busca_Frase(string fraseBusca);
 	string Arrumar_Palavra(string palavra);
 	std::set<string> Busca_Nos_Arquivos(string palavra);
-	bool Varre_Arquivo(string path, string palavra);
+	bool Varre_Arquivo(string caminho, string palavra);
 };
 #endif
