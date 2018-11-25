@@ -11,12 +11,16 @@ class Busca {
 public:
 	void Inserir_Livro(string nome, string caminho);
 	void Remover_Livro(string nome);
-	map<string, std::set<string>> Buscar(string fraseDigitada);
+	int Quantidade_Livros();
+	std::map<string, std::set<string>> Buscar(string fraseDigitada);
+	Busca();
 
 
 private:
 	std::map<string, string> livros_;
 	std::map<string, std::set<string>> palavrasBuscadas_;
+	int contaLivros_;
+
 
 	void Busca_Frase(string fraseBusca);
 	string Arrumar_Palavra(string palavra);
