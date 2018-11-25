@@ -24,7 +24,7 @@ int main() {
 	for (map<string, set<string>>::iterator mapa = resultado.begin(); mapa != resultado.end(); mapa++) {
 		std::cout << "Palavra: " << (*mapa).first << "\nLivros: ";
 		for (set<string>::iterator livroSet = (*mapa).second.begin(); livroSet != (*mapa).second.end(); livroSet++) {
-			std::cout << (*livroSet) << " ";
+			std::cout << (*livroSet) << ", ";
 		}
 		std::cout << "\n";
 	}
