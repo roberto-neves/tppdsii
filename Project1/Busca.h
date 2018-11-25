@@ -11,6 +11,7 @@ class Busca {
 public:
 	void Inserir_Livro(string nome, string caminho);
 	void Remover_Livro(string nome);
+	void Limpar_Livro();
 	int Quantidade_Livros();
 	std::map<string, std::set<string>> Buscar(string fraseDigitada);
 	Busca();
