@@ -65,7 +65,7 @@ string Busca::Arrumar_Palavra(string palavra)
 	for (int i = 0; palavraChar[i] != NULL; i++) {
 		if (int(palavraChar[i] >= 65 && int(palavraChar[i]) <= 90)) //Maísculas transformadas em Minúsuclas
 			palavraChar[i] = palavraChar[i] + 32;
-		else if (int(palavraChar[i]) >= 97 && int(palavraChar[i]) <= 122) {}//Minúsculas -> Do nothing
+		else if ((int(palavraChar[i]) >= 97 && int(palavraChar[i]) <= 122) || (int(palavraChar[i]) >= 48 && int(palavraChar[i]) <= 57)) {}//Minúsculas e números -> Do nothing
 		else
 			palavraChar[i] = 33; //Tranforma todo outro tipo de caracter em ! para facilitar a remoção
 	}
