@@ -22,14 +22,15 @@ void Busca::Remover_Livro(string nome)
 	}
 }
 
-void Busca::Limpar_Livro()
-{
-	this->livros_.erase(livros_.begin(), livros_.end());
-}
 
 int Busca::Quantidade_Livros()
 {
 	return contaLivros_;
+}
+
+void Busca::Limpa_Livros()
+{
+	livros_.erase(livros_.begin(), livros_.end());
 }
 
 map<string, std::set<string>> Busca::Buscar(string fraseDigitada)
