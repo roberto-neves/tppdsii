@@ -30,7 +30,8 @@ int Busca::Quantidade_Livros()
 
 void Busca::Limpa_Livros()
 {
-	livros_.erase(livros_.begin(), livros_.end());
+	livros_.clear();
+	contaLivros_ = 0;
 }
 
 map<string, std::set<string>> Busca::Buscar(string fraseDigitada)
@@ -47,16 +48,16 @@ Busca::Busca()
 
 void Busca::Busca_Frase(string fraseBusca)
 {
-	this->palavrasBuscadas_.erase(this->palavrasBuscadas_.begin(), this->palavrasBuscadas_.end()); //Apagando informações da última busca
+	palavrasBuscadas_.clear(); //Apagando informações da última busca
 	size_t posicao = 0;
 	string palavra;
 	string delimitador = " ";
 	while ((posicao = fraseBusca.find(delimitador)) != string::npos) {
 		palavra = fraseBusca.substr(0, posicao);
-		this->palavrasBuscadas_[palavra] = Busca_Nos_Arquivos(Arrumar_Palavra(palavra));
+		this->palavrasBuscadas_[Arrumar_Palavra(palavra)] = Busca_Nos_Arquivos(Arrumar_Palavra(palavra));
 		fraseBusca.erase(0, posicao + delimitador.length());
 	}
-	this->palavrasBuscadas_[fraseBusca] = Busca_Nos_Arquivos(Arrumar_Palavra(fraseBusca));
+	this->palavrasBuscadas_[Arrumar_Palavra(fraseBusca)] = Busca_Nos_Arquivos(Arrumar_Palavra(fraseBusca));
 }
 
 string Busca::Arrumar_Palavra(string palavra)
